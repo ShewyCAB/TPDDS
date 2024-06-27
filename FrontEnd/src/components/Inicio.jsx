@@ -1,22 +1,27 @@
 import React from 'react'; //necesaria en stackblitz
 
 function Inicio() {
-  const integrantes = [
-    { nombre: '82362 - Gonzalo Osimani' },
-    { nombre: '82488 - Milena Muñoz' },
-    { nombre: '86406 - Leandro Ochoa' },
-    { nombre: '91498 - Dario Diaz' },
-  ];
+    const integrantes = [
+        { nombre: 'Legajo - Alumno1' },
+        { nombre: 'Legajo - Alumno2' },
+        { nombre: 'Legajo - Alumno3' },
+    ];
 
-  return (
-    <div className="mt-4 p-5 rounded" style={{ backgroundColor: 'white', fontSize: '20px'}}>
-      <h1>Integrantes</h1>
-      <ul>
-        {integrantes.map((integrante) => (
-          <li key={integrante.nombre}>{integrante.nombre}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+    return (
+
+            <div className='div-integrantes'>
+                <h1>Integrantes</h1>
+                <div className='lista'>
+                <ul>
+                    {integrantes.map((integrante) => (
+                    <li key={integrante.nombre}>{integrante.nombre}</li>
+                    ))}
+                </ul>
+
+                </div>
+
+            </div>
+
+    );
+    }
 export { Inicio };

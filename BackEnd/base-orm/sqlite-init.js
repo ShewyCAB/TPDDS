@@ -10,14 +10,14 @@ async function CrearBaseSiNoExiste() {
 
     // Verificar si existen las tablas de autos
     res = await db.get(
-      "SELECT count(*) as contar FROM sqlite_schema WHERE type = 'table' and name = 'AUTOS'",
+      "SELECT count(*) as contar FROM sqlite_schema WHERE type = 'table' and name = 'autos'",
       []
     );
     existe = res.contar > 0;
     if (!existe) {
       // Crear tabla de autos
       await db.run(
-        `CREATE TABLE AUTOS (
+        `CREATE TABLE autos (
             IdAuto INTEGER PRIMARY KEY AUTOINCREMENT,
             Precio_Actual REAL NOT NULL,
             Idmarca INTEGER NOT NULL REFERENCES marca(Idmarca),
@@ -134,7 +134,7 @@ async function CrearBaseSiNoExiste() {
       // Crear tabla de concesionaria
       await db.run(
         `CREATE TABLE concesionaria (
-            IdConcesionaria INTEGER PRIMARY KEY,
+            IdConcesionaria INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
             Nombre TEXT NOT NULL,
             IdLocalidad INTEGER NOT NULL REFERENCES localidad(IdLocalidad)
           );`
@@ -145,16 +145,16 @@ async function CrearBaseSiNoExiste() {
       await db.run(
         `INSERT INTO concesionaria (IdConcesionaria, Nombre, IdLocalidad)
         VALUES
-                (1, 'Concesionaria 1', 1),
-                (2, 'Concesionaria 2', 2),
-                (3, 'Concesionaria 3', 3),
-                (4, 'Concesionaria 4', 4),
-                (5, 'Concesionaria 5', 5),
-                (6, 'Concesionaria 6', 6),
-                (7, 'Concesionaria 7', 7),
-                (8, 'Concesionaria 8', 8),
-                (9, 'Concesionaria 9', 9),
-                (10, 'Concesionaria 10', 10);`
+                ('Concesionaria 1', 1),
+                ('Concesionaria 2', 2),
+                ('Concesionaria 3', 3),
+                ('Concesionaria 4', 4),
+                ('Concesionaria 5', 5),
+                ('Concesionaria 6', 6),
+                ('Concesionaria 7', 7),
+                ('Concesionaria 8', 8),
+                ('Concesionaria 9', 9),
+                (('Concesionaria 10', 10);`
       );
       console.log("Datos de concesionaria insertados!");
     }

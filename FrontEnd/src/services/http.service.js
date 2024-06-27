@@ -40,7 +40,7 @@ httpService.interceptors.response.use(
       // no auntenticado
       error.message = "debe loguearse para acceder a esta funcionalidad";
     } else if (error.response.status === 403) {
-      // no auntenticado
+      // no autenticado
       error.message = "usuario no autorizado para acceder a esta funcionalidad";
     } else {
       error.message =

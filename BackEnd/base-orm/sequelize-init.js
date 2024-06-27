@@ -1,11 +1,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const path = require('path');
+//const path = require('path');
 
 // Create a new Sequelize instance
-const sequelize = new Sequelize({
-  dialect: 'sqlite',
-  storage: path.join(__dirname, './.data/tpdds.db')
-});
+const sequelize = new Sequelize("sqlite:" + "./.data/tpdds.db");
 
 // Define models
 

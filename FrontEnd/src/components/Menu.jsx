@@ -28,7 +28,7 @@ function Menu() {
       <div className="container-fluid">
         <a className="navbar-brand" href="/inicio">
           <i className="fa fa-school"></i>
-          &nbsp;<i> DESARROLLO DE SOFTWARE</i>
+          &nbsp;<i> DDS</i>
         </a>
         <button
           className="navbar-toggler"
@@ -52,26 +52,26 @@ function Menu() {
             </li>
 
             <li className="nav-item">
-              <NavLink className="nav-link" to="/libros">
-                Libros
+              <NavLink className="nav-link" to="/autos">
+                Autos
               </NavLink>
             </li>
 
             <li className="nav-item">
-              <NavLink className="nav-link" to="/peliculas">
-                Peliculas
+              <NavLink className="nav-link" to="/localidades">
+                Localidades
               </NavLink>
             </li>
 
             <li className="nav-item">
-              <NavLink className="nav-link" to="/canciones">
-                Canciones
+              <NavLink className="nav-link" to="/concesionarias">
+                Concesionarias
               </NavLink>
             </li>
 
             <li className="nav-item">
-              <NavLink className="nav-link" to="/juegos">
-                Juegos
+              <NavLink className="nav-link" to="/marcas">
+                Marcas
               </NavLink>
             </li>
 

@@ -9,18 +9,18 @@ app.use(express.json()); // para poder leer json en el body
 
 const cors = require("cors");
 app.use(
-  cors({
-    origin: "*", // origin: 'https://dds-frontend.azurewebsites.net'
-  })
+    cors({
+        origin: "*", // origin: 'https://dds-frontend.azurewebsites.net'
+        })
 );
 
 // controlar ruta
 app.get("/", (req, res) => {
-  res.send("dds-backend iniciado!");
+    res.send("dds-backend iniciado!");
 });
 
 
-const marcaRouter = require("./routes/marca");
+const marcaRouter = require("./routes/marcas");
 app.use(marcaRouter);
 
 const modeloRouter = require("./routes/modelos");
@@ -29,7 +29,7 @@ app.use(modeloRouter);
 const autoRouter = require("./routes/autos");
 app.use(autoRouter);
 
-const localidadRouter = require("./routes/localidad");
+const localidadRouter = require("./routes/localidades");
 app.use(localidadRouter);
 
 const concesionariaRouter = require("./routes/concesionarias");
@@ -43,7 +43,7 @@ if (!module.parent) {   // si no es llamado por otro módulo, es decir, si es el
     const port = process.env.PORT || 4000;   // en producción se usa el puerto de la variable de entorno PORT
     app.locals.fechaInicio = new Date();
     app.listen(port, () => {
-      console.log(`sitio escuchando en el puerto ${port}`);
+        console.log(`sitio escuchando en el puerto http://localhost:${port}`);
     });
-  }
+    }
   module.exports = app; // para testing
