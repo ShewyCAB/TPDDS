@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/7cbef891-89c2-4557-8f8c-a556e25662e9/resourceGroups/GrupoRecursoNode/providers/Microsoft.Web/sites/dds-frontend",
+    "appService.deploySubpath": "."
+}
